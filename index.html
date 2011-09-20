@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+	<title>Password Masking Experiment</title>
+  <link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.3.0/bootstrap.min.css">
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+  <script type="text/javascript">
+    $("form input").live('keyup', function(event) {
+      var itemValue = $(this).val();
+      var itemValueSub = itemValue.substr(itemValue.length - 1);
+      if (itemValue.length != 0) {
+        $("#passwordHelper").html("<span>" + itemValueSub + "</span> " + itemValue.length).find('span').delay(300).fadeOut("slow", function() {
+          $(this).remove();
+        });
+      } else {
+        $("#passwordHelper").html("");
+      }
+      itemValue = "";
+      itemValueSub = "";
+      return true;
+    });
+  </script>
+  <style type="text/css">
+    body {
+      width: 600px;
+      margin: 60px auto;
+    }
+    label {
+      margin-right: 16px;
+    }
+    #passwordHelper {
+      color: #ccc;
+      margin: 8px 240px 0 154px;
+      position: relative;
+      text-align: right;
+    }
+      #passwordHelper span {
+        float: left;
+      }
+  </style>
+</head>
+<body>
+  <form>
+    <label for="superPass">Your password:</label>
+    <input id="superPass" type="password">
+    <p id="passwordHelper"></p>
+  </form>
+</body>
+</html>
