@@ -1,0 +1,36 @@
+body {
+  width: 600px;
+  margin: 60px auto; }
+
+label {
+  margin-right: 16px; }
+
+#pwdCount {
+  color: #cccccc;
+  margin: 8px 240px 0 154px;
+  text-align: right; }
+
+#pwdChar {
+  position: absolute;
+  display: block;
+  width: 22px;
+  height: 22px;
+  padding-top: 4px;
+  border-radius: 4px;
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.12, white), color-stop(0.86, #ebebeb));
+  background-color: #eeeeee;
+  border: 2px solid #00aaff;
+  text-align: center;
+  color: #666666;
+  font-size: 20px;
+  text-shadow: 0 1px 0 white; }
+  #pwdChar:after {
+    content: "";
+    border-color: #00aaff transparent transparent transparent;
+    border-style: solid;
+    border-width: 5px;
+    height: 0;
+    width: 0;
+    position: absolute;
+    bottom: -12px;
+    left: 6px; }
